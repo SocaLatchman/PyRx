@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+        <title>RxPy</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css' )}}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.9/cdn.js" integrity="sha512-Qg4yHOPXaMOpvyQ8hk5ZVYUIXGE/0hxftn0lecaz04ohvI0ytM7AXpSzK1sfcYk79B1WexR3nG37Q/JboHLB2Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="{{ url_for('static', filename='js/main.js' )}}"></script>
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+    </body>
+  </html>
