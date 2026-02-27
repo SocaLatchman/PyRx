@@ -15,11 +15,11 @@ def index():
 
 @app.route('/register')
 def register():
-    pass
+    return render_template('authentication.html')
 
 @app.route('/signin')
 def signin():
-    pass
+    return render_template('authentication.html')
 
 @app.route('/signout')
 def signout():
