@@ -1,0 +1,13 @@
+<div class="reminder">
+  <div class="img">
+      <img src="{{ url_for('static', filename='images/clock-solid.svg')}}" alt="">
+    </div>
+    <span>Set Reminder</span> 
+    <form method="POST">
+        <label for="medication-name">Medication</label>
+        <input type="text" name="Medication-name" placeholder="Medication" id="medication-name">
+        <label for="reminder-time">Reminder time</label>
+        <input type="time" name="reminder-time" placeholder="08:00am" id="reminder-time">
+        <input type="button" value="Set e-mail scheduler">
+    </form> 
+</div>

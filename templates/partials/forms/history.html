@@ -1,1 +1,29 @@
-
+<div class="medication-history">
+  <div class="img">
+      <img src="{{ url_for('static', filename='images/add-contact.svg')}}" alt="">
+    </div>
+    <span>Download Medication History</span> 
+      <form method="POST">
+        <label for="medication"></label>
+        <select name="medications">
+            <option value="">Medication 1</option>
+            <option value="">Medication 2</option>
+            <option value="">Medication 3</option>
+            <option value="">All</option>
+        </select>
+        <label for="start-date"></label>
+        <select name="start-date" id="start-date">
+            <option value="">Feb 23, 2011</option>
+            <option value="">Feb 23, 2011</option>
+            <option value="">Feb 23, 2011</option>
+        </select>
+        <label for="end-date"></label>
+        <select name="end-date" id="end-date">
+            <option value="">Feb 23, 2026</option>
+            <option value="">Feb 23, 2026</option>
+            <option value="">Feb 23, 2026</option>
+            <option value="">Present</option>
+        </select>
+        <input type="button" value="Download pdf">
+    </form>  
+</div>

@@ -1,0 +1,30 @@
+<div class="invite">
+  <div class="img">
+      <img src="{{ url_for('static', filename='images/envelope-solid.svg')}}" alt="">
+    </div>
+    <span>Invite</span>  
+     <form method="POST">
+        <p>Share medication history</p>
+        <label for="invite-email"></label>
+        <input type="email" name="invite-email" placeholder="E-mail Address" id="invite-email">
+        <label for="invite-medication">Medication</label>
+        <select name="invite-medication" id="invite-medication">
+           <option value="">Medication 1</option>
+           <option value="">Medication 2</option>
+           <option value="">Medication 3</option>
+         </select>        
+        <label for="invite-medication-startdate">Medication</label>
+        <select name="invite-medication-startdate" id="invite-medication-startdate">
+            <option value="">Feb 23, 2011</option>
+            <option value="">Feb 23, 2011</option>
+            <option value="">Feb 23, 2011</option>
+         </select>   
+        <label for="invite-medication-enddate"></label>
+        <select name="invite-medication-enddate" id="invite-medication-enddate">
+            <option value="">Feb 23, 2026</option>
+            <option value="">Feb 23, 2026</option>
+            <option value="">Feb 23, 2026</option>
+         </select>   
+        <input type="button" value="Send">
+    </form> 
+</div>

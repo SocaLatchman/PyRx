@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+<header>
+   <p>Current date and time: Thu Feb 26 6:48pm</p> 
+</header>
+<div class="flex-container">
+   <div class="left-column">
+      <header>
+        <div class="logo">
+           <img src="{{ url_for('static', filename='images/logo.svg')}}" alt="logo">
+         </div>
+         <span>RxPy</span>  
+      </header>
+      <section>
+         <p>Hello Robert,</p>
+         <p>Your next dose is in 2hrs and 5 mins</p>   
+        <div class="medication-card">
+            <h3>Medication 1 40mg</h3>
+            <div class="medication-details">
+               <img src="{{ url_for('static', filename='images/tablets-solid.svg')}}" alt="">
+               <span>Take today at 9:00am</span>
+            </div>
+         </div>
+         <div class="medication-card">
+            <h3>Medication 2 50mg</h3>
+            <div class="medication-details">
+               <img src="{{ url_for('static', filename='images/tablets-solid-purple.svg')}}" alt="">
+               <span>Take tonight at 9:00pm</span>
+            </div>
+         </div>  
+      </section>
+      <section>
+          {% include 'partials/medications.html' %}
+      </section>
+      <section>
+      </section>      
+   </div>
+   <div class="middle-column">
+      <section>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/prescription-bottle-solid.svg')}}" alt="logo">
+        </div>
+        <span>Medications</span>
+        <div class="medication-card">
+           <div class="left-content">
+              <p>Medication 1 40mg</p>
+              <span>Take 1 daily</span>
+           </div> 
+           <div class="right-content">
+              <button type="button" class="view-details-button">View Details</button>
+           </div> 
+        </div>
+        <div class="medication-card">
+           <div class="left-content">
+              <p>Medication 2 40mg</p>
+              <span>Take 1 daily</span>
+           </div> 
+           <div class="right-content">
+             <button type="button" class="view-details-button">View Details</button>
+           </div> 
+        </div>
+         <div class="medication-card">
+           <div class="left-content">
+              <p>Medication 3 40mg</p>
+              <span>Take 1 daily</span>
+           </div> 
+           <div class="right-content">
+              <button type="button" class="view-details-button">View Details</button>
+           </div> 
+        </div>
+      </section>
+      <section>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/file-medical-solid.svg')}}" alt="logo">
+        </div>
+        <span>History</span>
+        <div class="history">
+           <ul>
+             <li>Medication 1 40mg<span><a href="">View History</a></span></li>
+             <li>Medication 2 40mg<span><a href="">View History</a></span></li>
+             <li>Medication 3 600mg<span>Removed</span><span><a href="">View History</a></span></li>
+           </ul>
+        </div>
+      </section>
+   </div>
+   <div class="right-column">
+     <section>{% include 'partials/forms/reminder.html' %}</section>
+     <section>{% include 'partials/forms/history.html' %}</section>
+     <section>{% include 'partials/forms/settings.html' %}</section>
+     <section>{% include 'partials/forms/invitation.html' %}</section>
+     <section>{% include 'partials/forms/contact.html' %}</section>
+   </div>
+</div>
+{% endblock %}

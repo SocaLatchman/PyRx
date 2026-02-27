@@ -27,7 +27,7 @@ def signout():
 
 @app.route('/dashboard')
 def dashboard():
-    pass
+    return render_template('dashboard.html')
 
 @app.route('/dashboard/invitation', methods=['POST'])
 def invite_contact():
