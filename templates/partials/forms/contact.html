@@ -1,14 +1,16 @@
 <div class="contact">
-  <div class="img">
-      <img src="{{ url_for('static', filename='images/add-contact.svg')}}" alt="">
-    </div>
-    <span>Add Contact</span>  
+  <div>
+     <header>
+       <img src="{{ url_for('static', filename='images/add-contact.svg')}}" alt="">
+       <span>Add Contact</span> 
+      </header> 
       <form method="POST">
         <p>If you are forgetting to take your medication we will contact this person to remind you</p>
-        <label for="contact-name"></label>
+        <label for="contact-name">Contact</label>
         <input type="text" name="contact-name" placeholder="Contact name" id="contact-name">
         <label for="contact-email">E-mail</label>
         <input type="email" name="contact-email" placeholder="E-mail address" id="contact-email">
         <input type="button" value="Send">
     </form> 
+  </div>
 </div>

@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-<header>
-   <p>Current date and time: Thu Feb 26 6:48pm</p> 
+<header class="top">
+   <p>Current date and time: <span>Thu Feb 26 6:48pm</span></p> 
 </header>
 <div class="flex-container">
    <div class="left-column">
-      <header>
+      <header id="masthead">
         <div class="logo">
            <img src="{{ url_for('static', filename='images/logo.svg')}}" alt="logo">
          </div>
          <span>RxPy</span>  
       </header>
       <section>
-         <p>Hello Robert,</p>
-         <p>Your next dose is in 2hrs and 5 mins</p>   
-        <div class="medication-card">
+        <div class="greeting">
+          <h2>Hello Robert,</h2>
+          <p>Your next dose is in 2hrs and 5 mins</p>  
+        </div> 
+        <div class="medication-card pastel-green">
             <h3>Medication 1 40mg</h3>
             <div class="medication-details">
                <img src="{{ url_for('static', filename='images/tablets-solid.svg')}}" alt="">
@@ -30,17 +32,20 @@
          </div>  
       </section>
       <section>
-          {% include 'partials/medications.html' %}
-      </section>
-      <section>
-      </section>      
+          {% include 'partials/forms/medications.html' %}
+      </section>   
    </div>
+
+
+
    <div class="middle-column">
       <section>
+       <header>
         <div class="logo">
-            <img src="{{ url_for('static', filename='images/prescription-bottle-solid.svg')}}" alt="logo">
+            <img src="{{ url_for('static', filename='images/prescription-bottle-solid.svg')}}" alt="">
         </div>
         <span>Medications</span>
+       </header> 
         <div class="medication-card">
            <div class="left-content">
               <p>Medication 1 40mg</p>
@@ -67,22 +72,29 @@
            <div class="right-content">
               <button type="button" class="view-details-button">View Details</button>
            </div> 
-        </div>
+         </div>
       </section>
+
       <section>
-        <div class="logo">
-            <img src="{{ url_for('static', filename='images/file-medical-solid.svg')}}" alt="logo">
-        </div>
-        <span>History</span>
-        <div class="history">
-           <ul>
-             <li>Medication 1 40mg<span><a href="">View History</a></span></li>
-             <li>Medication 2 40mg<span><a href="">View History</a></span></li>
-             <li>Medication 3 600mg<span>Removed</span><span><a href="">View History</a></span></li>
-           </ul>
-        </div>
+          <header>
+              <div class="logo">
+                <img src="{{ url_for('static', filename='images/file-medical-solid.svg')}}" alt="logo">
+              </div>
+              <span>History</span>
+           </header>
+           <div class="history">
+            <ul>
+                <li>Medication 1 40mg<span><a href="">View History</a></span></li>
+                <li>Medication 2 40mg<span><a href="">View History</a></span></li>
+                <li>Medication 3 600mg<span class="removed">Removed</span><span><a href="">View History</a></span></li>
+            </ul>
+          </div>
       </section>
    </div>
+
+
+
+
    <div class="right-column">
      <section>{% include 'partials/forms/reminder.html' %}</section>
      <section>{% include 'partials/forms/history.html' %}</section>

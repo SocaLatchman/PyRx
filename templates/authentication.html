@@ -14,7 +14,7 @@
         <label for="password">Password</label>
         <input type="password" name="password" placeholder="Password" id="password">
         <input type="submit" value="Sign in">
-        <span>Don’t have an account?<a href="{{ url_for('register')}}">Sign up here</a></span>
+        <span>Don’t have an account?&nbsp;&nbsp;<a href="{{ url_for('register')}}">Sign up here</a></span>
     </form>
   {% elif request.endpoint == 'register' %}
     <form method="POST">
@@ -25,7 +25,7 @@
         <label for="password">Password</label>
         <input type="password" name="password" placeholder="Password" id="password">
         <input type="submit" value="Register">
-        <span>Have an account?<a href="{{ url_for('signin')}}">Sign in here</a></span>
+        <span>Have an account?&nbsp;&nbsp;<a href="{{ url_for('signin')}}">Sign in here</a></span>
     </form>
  {% endif %}
 </div>

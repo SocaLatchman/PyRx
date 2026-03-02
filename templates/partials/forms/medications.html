@@ -1,4 +1,5 @@
 <div class="medication-form">
+   <div>
     <header>
       <img src="{{ url_for('static', filename='images/prescription-bottle-solid.svg')}}" alt="">
       <span>Add Medication</span>
@@ -8,12 +9,15 @@
        <input type="text" name="medication" placeholder="Medication" id="medication">
        <label for="dosage"></label>
        <input type="text" name="dosage" placeholder="0mg" id="dosage">
+       <label for="prescription-date"></label>
+       <input type="text" name="prescription-date" placeholder="Prescription Date" onblur="(this.type='text')" onfocus="(this.type='date')" id="prescription-date">
        <label for="frequency"></label>
        <input type="text" name="frequency" placeholder="Daily" id="frequency">
         <label for="med-reminder-time"></label>
-       <input type="time" name="med-reminder-time" id="med-reminder-time">
+       <input type="text" name="med-reminder-time" placeholder="09:00AM" onfocus="(this.type='time')" onblur="(this.type='text')" id="med-reminder-time">
        <label for="note"></label>
        <textarea name="note" placeholder="Note" id="note"></textarea>
        <input type="button" value="Save medication">
     </form>
+   </div>  
 </div>

@@ -1,8 +1,9 @@
 <div class="settings">
-  <div class="img">
-      <img src="{{ url_for('static', filename='images/user-gear-solid.svg')}}" alt="">
-    </div>
+  <div>
+  <header>
+    <img src="{{ url_for('static', filename='images/user-gear-solid.svg')}}" alt="">
     <span>Settings</span>  
+   </header> 
       <form method="POST">
         <label for="email">Change E-mail Address</label>
         <input type="email" name="email" placeholder="E-mail address" id="email">
@@ -10,4 +11,5 @@
         <input type="password" name="password" placeholder="Password" id="password">
         <input type="button" value="Update settings">
     </form> 
+  </div>
 </div>

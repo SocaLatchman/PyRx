@@ -1,13 +1,20 @@
 <div class="reminder">
-  <div class="img">
-      <img src="{{ url_for('static', filename='images/clock-solid.svg')}}" alt="">
-    </div>
+   <div>
+  <header>
+    <img src="{{ url_for('static', filename='images/clock-solid.svg')}}" alt="">
     <span>Set Reminder</span> 
+  </header>  
     <form method="POST">
         <label for="medication-name">Medication</label>
-        <input type="text" name="Medication-name" placeholder="Medication" id="medication-name">
+        <select name="medication-name" id="medication-name">
+            <option value="">Medication 1</option>
+            <option value="">Medication 2</option>
+            <option value="">Medication 3</option>
+            <option value="">All</option>
+        </select>        
         <label for="reminder-time">Reminder time</label>
-        <input type="time" name="reminder-time" placeholder="08:00am" id="reminder-time">
+        <input type="text" name="reminder-time" placeholder="08:00am" onblur="(type='text')" onfocus="(type='time')" id="reminder-time">
         <input type="button" value="Set e-mail scheduler">
     </form> 
+   </div> 
 </div>
