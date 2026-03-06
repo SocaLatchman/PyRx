@@ -1,13 +1,32 @@
 from flask import Flask, render_template, redirect, url_for, session
+from flask_marshmallow import Marshmallow
+from database import init_db_ma
+from models import *
 from dotenv import load_dotenv
 import os
+
 
 load_dotenv('.env')
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+init_db_ma(app)
 
+
+
+@app.route('/test')
+def test():
+    user = User()
+    contact = Contact()
+    medications = Medication()
+    user = user.get_user(4)
+    get_user = user_schema.dump(user)
+    user_contacts = contact.user_contacts(int(get_user['user_id']))
+    user_medications = medications.user_medication(int(get_user['user_id']))
+    print(user_contacts.contact_name)
+    print(user_medications.name)
+    return {'success' : 200}
 
 @app.route('/')
 def index():
